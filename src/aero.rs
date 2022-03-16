@@ -47,6 +47,12 @@ pub struct AirState<T: Float = DefaultFloatRepr> {
     pub airspeed: T,
     /// Dynamic pressure (Pa) (kg·m<sup>-1</sup>·s<sup>2</sup>)
     pub q: T,
+    /// Velocity in body x direction (m·s<sup>-1</sup>)
+    pub u: T,
+    /// Velocity in body y direction (m.s<sup>-1</sup>)
+    pub v: T,
+    /// Velocity in body w direction (m.s<sup>-1</sup>)
+    pub w: T
 }
 
 /// Represent a body in an atmosphere
@@ -134,6 +140,9 @@ impl<T: Float, W: WindModel<T>, D: DensityModel<T>> AeroBody<T,W,D> {
             beta,
             airspeed,
             q,
+            u,
+            v,
+            w,
         }
     }
     
